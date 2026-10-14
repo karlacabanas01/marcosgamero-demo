@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative h-svh max-h-[650px] min-h-[480px] overflow-hidden"
+      className="relative h-svh max-h-[760px] min-h-[600px] overflow-hidden"
     >
       <Image
         src="/hotel/hero-hotel.png"
@@ -19,23 +19,20 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,16,13,0.25) 0%, rgba(10,16,13,0.15) 35%, rgba(10,16,13,0.5) 70%, rgba(10,16,13,0.8) 100%)",
+            "linear-gradient(180deg, rgba(13,15,18,0.55) 0%, rgba(13,15,18,0.25) 28%, rgba(13,15,18,0.35) 65%, rgba(13,15,18,0.7) 100%)",
         }}
       />
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:px-10 pb-28 md:pb-32">
-        <div className="max-w-[1180px] mx-auto flex flex-col items-center text-center">
-          <h1 className="font-display font-normal text-linen text-[clamp(1.9rem,4.6vw,3.1rem)] leading-[1.15] max-w-[18ch]">
-            Un refugio atemporal: elegancia colonial moderna
-          </h1>
-          <p className="mt-3 text-[clamp(14px,1.3vw,16px)] max-w-[46ch] text-[#e7e0d5]">
-            Descubre una mezcla de herencia y lujo contemporáneo en pleno
-            corazón de Talca.
-          </p>
-        </div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 pb-20 text-center">
+        <h1 className="font-serif font-normal text-bg-light text-[clamp(3.25rem,6vw,4rem)] leading-[1.05] max-w-[16ch]">
+          Un hotel con historia en el Maule
+        </h1>
+        <p className="font-sans text-[12px] tracking-[0.2em] uppercase text-bg-light/85 mt-4">
+          Descubriendo el Maule
+        </p>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 px-4 md:px-8 pb-4 md:pb-6">
+      <div className="absolute inset-x-0 bottom-0 px-4 md:px-8 pb-6 md:pb-8">
         <BookingBar />
       </div>
     </section>

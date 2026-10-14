@@ -2,56 +2,51 @@ import Image from "next/image";
 
 export function Intro() {
   return (
-    <section className="bg-linen pt-[clamp(80px,10vw,120px)] pb-[clamp(56px,8vw,104px)]">
-      <div className="max-w-[1180px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-14 items-center">
-        <div className="relative rounded-md overflow-hidden aspect-[3/4] border border-border">
+    <section className="bg-bg-light py-[clamp(96px,12vw,160px)]">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-14 items-center">
+        <div className="relative overflow-hidden aspect-[4/5] order-1 md:order-2">
           <Image
             src="/hotel/168HMG.jpg"
             alt="Puerta original número 204 junto a la pared de retratos familiares en blanco y negro"
             fill
-            sizes="(min-width: 768px) 40vw, 90vw"
+            sizes="(min-width: 768px) 45vw, 90vw"
             className="object-cover"
           />
         </div>
 
-        <div>
-          <p className="font-display text-xs font-semibold tracking-[0.16em] uppercase text-terracotta mb-3.5">
-            Develando nuestra historia
+        <div className="order-2 md:order-1">
+          <p className="font-serif-italic text-[26px] text-botanical">
+            Escape
           </p>
-          <h2 className="text-[clamp(1.7rem,2.8vw,2.3rem)] font-normal leading-[1.28]">
-            Una herencia restaurada. Una visión moderna de lujo colonial.
+          <h2 className="text-[clamp(2rem,3.2vw,2.6rem)] font-normal leading-[1.2] mt-3">
+            Una herencia restaurada, una visión moderna de lujo colonial
           </h2>
-          <p className="text-carbon-soft text-[15.5px] mt-[18px]">
+          <div className="w-10 h-px bg-border mt-7 mb-7" />
+          <p className="text-text-muted text-[15.5px] leading-[1.75] max-w-[42ch]">
             Hotel familiar en el corazón de Talca, donde cada habitación tiene
             personalidad propia gracias a su propuesta Vintage Boutique:
             mobiliario de época, salas para reuniones y un bar-cafetería con
             coctelería y cocina de ingredientes frescos y locales.
           </p>
 
-          <div className="grid grid-cols-2 gap-5 mt-[30px]">
-            <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-border">
+          <div className="grid grid-cols-2 gap-4 mt-10 max-w-[420px]">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="/hotel/184HMG.jpg"
                 alt="Salón con vigas de madera oscura y pintura de época"
                 fill
-                sizes="(min-width: 768px) 20vw, 45vw"
+                sizes="(min-width: 768px) 15vw, 45vw"
                 className="object-cover"
               />
-              <span className="absolute bottom-2.5 left-3 text-linen text-xs tracking-wide [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
-                Salones con carácter
-              </span>
             </div>
-            <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-border">
+            <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="/hotel/40HMG.jpg"
                 alt="Habitación con cama y cortinas junto a la ventana"
                 fill
-                sizes="(min-width: 768px) 20vw, 45vw"
+                sizes="(min-width: 768px) 15vw, 45vw"
                 className="object-cover"
               />
-              <span className="absolute bottom-2.5 left-3 text-linen text-xs tracking-wide [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]">
-                Confort actual
-              </span>
             </div>
           </div>
         </div>

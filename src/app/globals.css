@@ -1,51 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --linen: #f9f7f2;
-  --linen-deep: #f0ebe1;
-  --carbon: #1a1a1a;
-  --carbon-soft: #4a4540;
-  --terracotta: #b86b52;
-  --terracotta-deep: #96543e;
-  --terracotta-light: #d9a68f;
-  --bottle: #1c3b32;
-  --bottle-deep: #14281f;
-  --border: #e0d7cd;
+  --bg-light: #ffffff;
+  --bg-warm: #f7f6f3;
+  --dark: #0d0f12;
+  --dark-green: #121917;
+  --text-muted: #75797e;
+  --brass: #c59b63;
+  --brass-soft: #ddc39a;
+  --botanical: #1c2e28;
+  --botanical-deep: #0f1b17;
+  --botanical-soft: #8fab9c;
+  --blush: #e8cdc8;
+  --blush-deep: #d9afa7;
+  --border: #e4e2dd;
 }
 
 @theme inline {
-  --color-linen: var(--linen);
-  --color-linen-deep: var(--linen-deep);
-  --color-carbon: var(--carbon);
-  --color-carbon-soft: var(--carbon-soft);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-deep: var(--terracotta-deep);
-  --color-terracotta-light: var(--terracotta-light);
-  --color-bottle: var(--bottle);
-  --color-bottle-deep: var(--bottle-deep);
+  --color-bg-light: var(--bg-light);
+  --color-bg-warm: var(--bg-warm);
+  --color-dark: var(--dark);
+  --color-dark-green: var(--dark-green);
+  --color-text-muted: var(--text-muted);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-botanical: var(--botanical);
+  --color-botanical-deep: var(--botanical-deep);
+  --color-botanical-soft: var(--botanical-soft);
+  --color-blush: var(--blush);
+  --color-blush-deep: var(--blush-deep);
   --color-border: var(--border);
-  --font-display: var(--font-cinzel);
-  --font-body: var(--font-dm-sans);
+  --font-serif: var(--font-serif);
+  --font-serif-italic: var(--font-serif-italic);
+  --font-sans: var(--font-sans);
 }
 
 body {
-  background: var(--linen);
-  color: var(--carbon);
-  font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  background: var(--bg-light);
+  color: var(--dark);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-cinzel), Georgia, serif;
-  font-weight: 500;
-  font-variation-settings: "SOFT" 100, "opsz" 40;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   text-wrap: balance;
-  letter-spacing: 0.01em;
+  margin: 0;
 }
 
-.font-display {
-  font-variation-settings: "SOFT" 100, "opsz" 40;
+.font-serif-italic {
+  font-family: var(--font-serif-italic), Georgia, serif;
+  font-style: italic;
 }
 
 .sr-only {

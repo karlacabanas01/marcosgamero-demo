@@ -18,7 +18,7 @@ export function Dropdown({
   value,
   onChange,
   name,
-  labelClassName = "text-linen",
+  labelClassName = "text-text-muted",
 }: DropdownProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -35,7 +35,7 @@ export function Dropdown({
     function updatePosition() {
       const rect = triggerRef.current?.getBoundingClientRect();
       if (!rect) return;
-      setCoords({ top: rect.bottom + 6, left: rect.left, width: rect.width });
+      setCoords({ top: rect.bottom + 10, left: rect.left, width: Math.max(rect.width, 180) });
     }
 
     updatePosition();
@@ -66,7 +66,7 @@ export function Dropdown({
     <div
       ref={panelRef}
       style={{ top: coords.top, left: coords.left, width: coords.width }}
-      className="fixed z-[100] bg-white border border-border rounded-md shadow-[0_24px_48px_-18px_rgba(20,40,31,0.45)] py-1.5 overflow-hidden"
+      className="fixed z-[100] bg-bg-light border border-border rounded-[2px] shadow-[0_24px_48px_-18px_rgba(13,15,18,0.28)] py-1.5 overflow-hidden"
     >
       {options.map((option) => (
         <button
@@ -78,8 +78,8 @@ export function Dropdown({
           }}
           className={`w-full text-left px-4 py-2.5 text-sm transition-colors duration-150 ${
             option === value
-              ? "bg-terracotta/12 text-carbon font-semibold"
-              : "text-carbon hover:bg-terracotta/8"
+              ? "bg-botanical/14 text-dark font-medium"
+              : "text-dark hover:bg-botanical/8"
           }`}
         >
           {option}
@@ -89,41 +89,23 @@ export function Dropdown({
   );
 
   return (
-    <div className="flex flex-col gap-[7px]">
+    <div className="flex flex-col gap-1">
       <span
         id={labelId}
-        className={`text-[11px] font-semibold tracking-[0.08em] uppercase ${labelClassName}`}
+        className={`text-[11px] tracking-[0.04em] uppercase ${labelClassName}`}
       >
         {label}
       </span>
-      <div className="relative">
-        <button
-          ref={triggerRef}
-          type="button"
-          aria-labelledby={labelId}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="w-full font-body text-sm pl-3 pr-9 py-2.5 border border-border rounded bg-linen text-carbon text-left whitespace-nowrap"
-        >
-          {value}
-        </button>
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 12 8"
-          className={`pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 ml-2 w-3 h-3 text-carbon-soft transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        >
-          <path
-            d="M1 1.5L6 6.5L11 1.5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-labelledby={labelId}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="w-full font-sans text-[14px] font-medium text-dark text-left whitespace-nowrap py-1"
+      >
+        {value}
+      </button>
 
       {mounted && panel ? createPortal(panel, document.body) : null}
     </div>

@@ -79,7 +79,7 @@ export function DateRangePicker({
       const rect = triggerRef.current?.getBoundingClientRect();
       if (!rect) return;
       setCoords({
-        top: rect.bottom + 8,
+        top: rect.bottom + 10,
         left: rect.left,
         width: rect.width,
       });
@@ -142,14 +142,14 @@ export function DateRangePicker({
 
     return (
       <div className="flex-1 min-w-[240px]">
-        <p className="font-display text-[13px] uppercase tracking-[0.08em] text-carbon text-center mb-3">
+        <p className="font-serif text-[15px] uppercase tracking-[0.08em] text-dark text-center mb-3">
           {MONTH_NAMES[normalized.getMonth()]} {normalized.getFullYear()}
         </p>
         <div className="grid grid-cols-7 gap-y-1">
           {WEEKDAYS.map((w, i) => (
             <div
               key={`${w}-${i}`}
-              className="text-[10px] font-semibold uppercase tracking-wide text-carbon-soft text-center py-1"
+              className="text-[10px] font-semibold uppercase tracking-wide text-text-muted text-center py-1"
             >
               {w}
             </div>
@@ -178,10 +178,10 @@ export function DateRangePicker({
                   isPast
                     ? "text-border cursor-not-allowed"
                     : isEdge
-                      ? "bg-carbon text-linen font-semibold"
+                      ? "bg-dark text-bg-light font-semibold"
                       : inRange
-                        ? "bg-terracotta/20 text-carbon"
-                        : "text-carbon hover:bg-terracotta/15"
+                        ? "bg-botanical/14 text-dark"
+                        : "text-dark hover:bg-botanical/10"
                 }`}
               >
                 {d.getDate()}
@@ -197,7 +197,7 @@ export function DateRangePicker({
     <div
       ref={panelRef}
       style={{ top: coords.top, left: coords.left }}
-      className="fixed z-[100] bg-white border border-border rounded-md shadow-[0_24px_48px_-18px_rgba(20,40,31,0.45)] p-5 flex flex-col gap-4 w-[min(92vw,560px)]"
+      className="fixed z-[100] bg-bg-light border border-border rounded-[2px] shadow-[0_24px_48px_-18px_rgba(13,15,18,0.28)] p-5 flex flex-col gap-4 w-[min(92vw,560px)]"
     >
       <div className="flex items-center justify-between">
         <button
@@ -206,12 +206,12 @@ export function DateRangePicker({
           onClick={() =>
             setCursor((c) => new Date(c.getFullYear(), c.getMonth() - 1, 1))
           }
-          className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-carbon hover:border-carbon transition-colors"
+          className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-dark hover:border-dark transition-colors"
         >
           ‹
         </button>
-        <span className="text-[11px] uppercase tracking-[0.1em] text-carbon-soft">
-          Selecciona llegada y salida
+        <span className="text-[11px] uppercase tracking-[0.1em] text-text-muted">
+          Llegada y salida
         </span>
         <button
           type="button"
@@ -219,7 +219,7 @@ export function DateRangePicker({
           onClick={() =>
             setCursor((c) => new Date(c.getFullYear(), c.getMonth() + 1, 1))
           }
-          className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-carbon hover:border-carbon transition-colors"
+          className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-dark hover:border-dark transition-colors"
         >
           ›
         </button>
@@ -231,7 +231,7 @@ export function DateRangePicker({
       </div>
 
       <div className="flex justify-between items-center pt-3 border-t border-border">
-        <span className="text-xs text-carbon-soft">
+        <span className="text-xs text-text-muted">
           {checkin && checkout
             ? `${formatDisplay(checkin)} – ${formatDisplay(checkout)}`
             : "Elige tu fecha de llegada"}
@@ -239,7 +239,7 @@ export function DateRangePicker({
         <button
           type="button"
           onClick={() => setOpen(false)}
-          className="text-[13px] font-semibold text-carbon underline underline-offset-2 hover:text-terracotta-deep transition-colors"
+          className="text-[13px] font-medium text-dark underline underline-offset-2 hover:text-botanical transition-colors"
         >
           Listo
         </button>
@@ -248,23 +248,23 @@ export function DateRangePicker({
   );
 
   return (
-    <div className="relative flex flex-col gap-[7px]">
+    <div className="relative flex flex-col gap-1">
       <span
         id="daterange-label"
-        className="text-[11px] font-semibold tracking-[0.08em] uppercase text-linen"
+        className="text-[11px] tracking-[0.04em] uppercase text-text-muted"
       >
-        Llegada — Salida
+        Fechas
       </span>
       <button
         ref={triggerRef}
         type="button"
         aria-labelledby="daterange-label"
         onClick={() => setOpen((v) => !v)}
-        className="font-body text-sm px-3 py-2.5 border border-border rounded bg-linen text-carbon text-left whitespace-nowrap"
+        className="font-sans text-[14px] font-medium text-dark text-left whitespace-nowrap py-1"
       >
-        {checkin ? formatDisplay(checkin) : "Elegir fecha"}
-        {" – "}
-        {checkout ? formatDisplay(checkout) : "Elegir fecha"}
+        {checkin ? formatDisplay(checkin) : "Check-in"}
+        {" → "}
+        {checkout ? formatDisplay(checkout) : "Check-out"}
       </button>
 
       {mounted && panel ? createPortal(panel, document.body) : null}

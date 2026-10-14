@@ -1,34 +1,39 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-cinzel",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: "variable",
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT"],
+  weight: ["400", "500", "600"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const cormorantItalic = Cormorant_Garamond({
+  variable: "--font-serif-italic",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500"],
+  style: ["italic"],
+});
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   title: "Hotel Marcos Gamero",
   description:
-    "Hotel colonial restaurado en el corazón de Talca, donde la casona original convive con diseño contemporáneo.",
+    "Un hotel con historia en el Maule. Hotel colonial restaurado en Talca.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${dmSans.variable} scroll-smooth h-full antialiased`}
+      className={`${cormorant.variable} ${cormorantItalic.variable} ${inter.variable} scroll-smooth h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-linen text-carbon pt-9">
+      <body className="min-h-full flex flex-col bg-bg-light text-dark">
         {children}
       </body>
     </html>

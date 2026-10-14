@@ -1,7 +1,7 @@
-import { TemplateBanner } from "@/components/TemplateBanner";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Intro } from "@/components/Intro";
+import { Familiar } from "@/components/Familiar";
 import { Legacy } from "@/components/Legacy";
 import { Rooms } from "@/components/Rooms";
 import { Services } from "@/components/Services";
@@ -15,11 +15,11 @@ import { ToastProvider } from "@/components/ToastProvider";
 export default function Home() {
   return (
     <ToastProvider>
-      <TemplateBanner />
       <Navbar />
       <main>
         <Hero />
         <Intro />
+        <Familiar />
         <Legacy />
         <Rooms />
         <Services />

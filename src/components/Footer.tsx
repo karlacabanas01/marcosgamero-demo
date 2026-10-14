@@ -12,11 +12,11 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-bottle text-[#e4ded2]">
-      <div className="border-b border-[#d9a68f]/22 py-11">
-        <div className="max-w-[1180px] mx-auto px-6 flex justify-between items-center gap-8 flex-wrap">
+    <footer className="bg-botanical text-[#e4ded2]">
+      <div className="border-b border-botanical-soft/22 py-11">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex justify-between items-center gap-8 flex-wrap">
           <div>
-            <h3 className="text-linen text-[1.3rem] font-normal uppercase tracking-[0.03em]">
+            <h3 className="text-bg-light text-[1.3rem] font-normal">
               Recepción directa
             </h3>
             <p className="text-[#b9c4bc] text-[13.5px] mt-2 max-w-[40ch]">
@@ -37,11 +37,11 @@ export function Footer() {
               name="newsletterEmail"
               placeholder="Tu correo electrónico"
               required
-              className="text-[13.5px] px-4 py-3 border border-linen/25 rounded bg-linen/6 text-linen placeholder:text-[#8fa199] min-w-0 flex-1 md:min-w-[240px] focus:outline focus:outline-terracotta focus:outline-offset-1"
+              className="text-[13.5px] px-4 py-3 border border-bg-light/25 rounded-[2px] bg-bg-light/6 text-bg-light placeholder:text-[#8fa199] min-w-0 flex-1 md:min-w-[240px] focus:outline focus:outline-blush-deep focus:outline-offset-1"
             />
             <button
               type="submit"
-              className="rounded bg-terracotta text-linen px-5 py-2.5 text-[11.5px] font-semibold tracking-[0.1em] transition-all duration-300 hover:bg-terracotta-deep"
+              className="rounded-[2px] bg-botanical-soft text-dark px-5 py-2.5 text-[11.5px] font-semibold tracking-[0.1em] transition-all duration-300 hover:bg-bg-light"
             >
               Suscribirme
             </button>
@@ -50,9 +50,9 @@ export function Footer() {
       </div>
 
       <div className="py-[52px]">
-        <div className="max-w-[1180px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-8">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-8">
           <div>
-            <div className="text-linen font-display text-base tracking-[0.1em] uppercase">
+            <div className="text-bg-light font-serif text-base tracking-[0.1em] uppercase">
               Marcos Gamero
             </div>
             <p className="text-[13px] text-[#a9b7ae] mt-3.5 max-w-[30ch]">
@@ -65,7 +65,7 @@ export function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="w-8 h-8 rounded-full border border-linen/22 flex items-center justify-center text-[13px] text-[#e4ded2] transition-colors hover:border-[#d9a68f] hover:text-[#d9a68f]"
+                  className="w-8 h-8 rounded-full border border-bg-light/22 flex items-center justify-center text-[13px] text-[#e4ded2] transition-colors hover:border-botanical-soft hover:text-botanical-soft"
                 >
                   {label}
                 </a>
@@ -76,10 +76,10 @@ export function Footer() {
           <FooterColumn
             title="Habitaciones"
             links={[
-              { label: "Habitación Patio", href: "#habitaciones" },
-              { label: "Habitación Galería", href: "#habitaciones" },
-              { label: "Suite Fundadores", href: "#habitaciones" },
-              { label: "Reservar ahora", href: "#reservar" },
+              { label: "Habitación Single", href: "/habitaciones/single" },
+              { label: "Habitación Familiar", href: "/habitaciones/familiares" },
+              { label: "Habitación Matrimonial", href: "/habitaciones/matrimoniales" },
+              { label: "Suite Novios", href: "/habitaciones/novios" },
             ]}
           />
 
@@ -87,29 +87,29 @@ export function Footer() {
             title="Gastronomía"
             links={[
               { label: "El Fogón de la Abuela", href: "#servicios" },
-              { label: "Spa & piscina", href: "#servicios" },
+              { label: "Wellness (Próximamente)", href: "#wellness" },
               { label: "Galería", href: "#galeria" },
               { label: "Nuestra historia", href: "#historia" },
             ]}
           />
 
           <div>
-            <h5 className="font-display text-[10.5px] tracking-[0.14em] uppercase text-[#c9a06f] mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-[#c9a06f] after:opacity-60">
+            <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
               Talca / Maule
             </h5>
             <ul className="list-none m-0 p-0 flex flex-col gap-[11px]">
               <li>
-                <a href="#ubicacion" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-[#d9a68f]">
+                <a href="/#ubicacion" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-bg-light">
                   Cómo llegar
                 </a>
               </li>
               <li>
-                <a href="#ubicacion" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-[#d9a68f]">
+                <a href="/#ubicacion" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-bg-light">
                   Ruta del Vino del Maule
                 </a>
               </li>
               <li>
-                <a href="#contacto" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-[#d9a68f]">
+                <a href="/#contacto" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-bg-light">
                   Contacto
                 </a>
               </li>
@@ -123,8 +123,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-linen/12 py-5">
-        <div className="max-w-[1180px] mx-auto px-6 flex justify-between text-[11.5px] text-[#8fa199] flex-wrap gap-2.5 tracking-wide">
+      <div className="border-t border-bg-light/12 py-5">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex justify-between text-[11.5px] text-[#8fa199] flex-wrap gap-2.5 tracking-wide">
           <span>© 2026 Hotel Marcos Gamero, Talca. Sitio de demostración.</span>
           <div className="flex gap-5 flex-wrap">
             <span className="cursor-default">Términos</span>
@@ -146,7 +146,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h5 className="font-display text-[10.5px] tracking-[0.14em] uppercase text-[#c9a06f] mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-[#c9a06f] after:opacity-60">
+      <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
         {title}
       </h5>
       <ul className="list-none m-0 p-0 flex flex-col gap-[11px]">
@@ -154,7 +154,7 @@ function FooterColumn({
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-[#d9a68f]"
+              className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-bg-light"
             >
               {link.label}
             </a>

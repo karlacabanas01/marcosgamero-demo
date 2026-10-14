@@ -11,19 +11,17 @@ function todayISO(offsetDays = 0) {
   return d.toISOString().slice(0, 10);
 }
 
-const GUEST_OPTIONS = ["1 adulto", "2 adultos", "3 adultos"];
-const ROOM_OPTIONS = [
-  "Habitación Patio",
-  "Habitación Galería",
-  "Suite Fundadores",
+const GUEST_OPTIONS = [
+  "1 habitación, 2 adultos",
+  "1 habitación, 1 adulto",
+  "2 habitaciones, 4 adultos",
 ];
 
 export function BookingBar() {
   const { showToast } = useToast();
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
-  const [guests, setGuests] = useState(GUEST_OPTIONS[1]);
-  const [roomtype, setRoomtype] = useState(ROOM_OPTIONS[0]);
+  const [guests, setGuests] = useState(GUEST_OPTIONS[0]);
 
   useEffect(() => {
     setCheckin(todayISO(0));
@@ -33,7 +31,7 @@ export function BookingBar() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     showToast(
-      `Disponibilidad simulada para "${roomtype}". Esto es una maqueta demo.`
+      `Disponibilidad simulada para "${guests}". Esto es una maqueta demo.`
     );
   }
 
@@ -41,9 +39,18 @@ export function BookingBar() {
     <div id="reservar" className="relative max-w-[1180px] mx-auto">
       <form
         onSubmit={handleSubmit}
-        className="bg-terracotta/94 backdrop-blur-sm rounded-md shadow-[0_24px_48px_-18px_rgba(20,40,31,0.45)] p-4 md:p-5 grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_auto] gap-3 md:gap-3.5 items-end"
+        className="bg-bg-light rounded-[3px] shadow-[0_20px_44px_-18px_rgba(13,15,18,0.4)] px-6 py-4 grid grid-cols-2 md:grid-cols-[1.3fr_1fr_1fr_auto] gap-x-8 gap-y-4 items-end divide-y md:divide-y-0 md:divide-x divide-border"
       >
-        <div className="col-span-2 md:col-span-1">
+        <div className="col-span-2 md:col-span-1 md:pr-8">
+          <span className="text-[10.5px] tracking-[0.06em] uppercase text-text-muted">
+            Location
+          </span>
+          <p className="font-sans text-[14px] font-medium text-dark mt-0.5">
+            Marcos Gamero, Talca
+          </p>
+        </div>
+
+        <div className="pt-4 md:pt-0 md:px-8">
           <DateRangePicker
             checkin={checkin}
             checkout={checkout}
@@ -54,28 +61,24 @@ export function BookingBar() {
           />
         </div>
 
-        <Dropdown
-          label="Adultos"
-          name="guests"
-          options={GUEST_OPTIONS}
-          value={guests}
-          onChange={setGuests}
-        />
+        <div className="pt-4 md:pt-0 md:px-8">
+          <Dropdown
+            label="Guests"
+            name="guests"
+            options={GUEST_OPTIONS}
+            value={guests}
+            onChange={setGuests}
+          />
+        </div>
 
-        <Dropdown
-          label="Habitación"
-          name="roomtype"
-          options={ROOM_OPTIONS}
-          value={roomtype}
-          onChange={setRoomtype}
-        />
-
-        <button
-          type="submit"
-          className="col-span-2 md:col-span-1 h-11 min-w-[140px] px-8 rounded bg-carbon text-linen font-semibold text-[13px] tracking-[0.04em] whitespace-nowrap transition-all duration-300 hover:bg-terracotta-deep"
-        >
-          Buscar
-        </button>
+        <div className="col-span-2 md:col-span-1 md:pl-8">
+          <button
+            type="submit"
+            className="w-full md:w-auto h-11 px-9 bg-dark text-bg-light font-sans text-[13px] font-medium tracking-[0.04em] rounded-[2px] transition-colors duration-300 hover:bg-botanical"
+          >
+            Book
+          </button>
+        </div>
       </form>
     </div>
   );
