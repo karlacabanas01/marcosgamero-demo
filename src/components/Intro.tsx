@@ -6,8 +6,8 @@ export function Intro() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-14 items-center">
         <div className="relative overflow-hidden aspect-[4/5] order-1 md:order-2">
           <Image
-            src="/hotel/168HMG.jpg"
-            alt="Puerta original número 204 junto a la pared de retratos familiares en blanco y negro"
+            src="/hotel/intro-lobby.jpg"
+            alt="Lobby del hotel con vigas negras, retrato familiar enmarcado y patio interior al fondo"
             fill
             sizes="(min-width: 768px) 45vw, 90vw"
             className="object-cover"
@@ -18,7 +18,7 @@ export function Intro() {
           <p className="font-serif-italic text-[26px] text-botanical">
             Escape
           </p>
-          <h2 className="text-[clamp(2rem,3.2vw,2.6rem)] font-normal leading-[1.2] mt-3">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] leading-[1.2] mt-3">
             Una herencia restaurada, una visión moderna de lujo colonial
           </h2>
           <div className="w-10 h-px bg-border mt-7 mb-7" />
@@ -32,8 +32,8 @@ export function Intro() {
           <div className="grid grid-cols-2 gap-4 mt-10 max-w-[420px]">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/hotel/184HMG.jpg"
-                alt="Salón con vigas de madera oscura y pintura de época"
+                src="/hotel/intro-salon.jpg"
+                alt="Salón invernadero con vigas de hierro, candelabro y mesas"
                 fill
                 sizes="(min-width: 768px) 15vw, 45vw"
                 className="object-cover"
@@ -41,8 +41,8 @@ export function Intro() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/hotel/40HMG.jpg"
-                alt="Habitación con cama y cortinas junto a la ventana"
+                src="/hotel/intro-desayuno.jpg"
+                alt="Mesa de desayuno con mermeladas, pan y detalles entre plantas"
                 fill
                 sizes="(min-width: 768px) 15vw, 45vw"
                 className="object-cover"

@@ -15,10 +15,7 @@ export function Familiar() {
         </div>
 
         <div className="order-1 md:order-2">
-          <p className="font-serif-italic text-[26px] text-botanical">
-            Cercanía
-          </p>
-          <h2 className="text-[clamp(2rem,3.4vw,2.8rem)] font-normal mt-3">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em]">
             Una casa de familia, no una cadena hotelera
           </h2>
           <p className="text-text-muted text-[15px] leading-[1.75] mt-3.5 max-w-[46ch]">

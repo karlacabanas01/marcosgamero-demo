@@ -9,10 +9,10 @@ export function Rooms() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="flex justify-between items-end gap-6 flex-wrap mb-14">
           <div>
-            <p className="font-serif-italic text-[26px] text-botanical">
-              Refugio
+            <p className="font-serif-italic text-[clamp(1.75rem,2.4vw,2rem)] font-normal text-botanical">
+              Comodidad
             </p>
-            <h2 className="text-[clamp(2rem,3.4vw,2.8rem)] font-normal mt-3">
+            <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-3">
               Habitaciones y suites
             </h2>
             <p className="max-w-[44ch] text-text-muted text-[15px] mt-3">

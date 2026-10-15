@@ -49,9 +49,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="py-[52px]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-8">
-          <div>
+      <div className="py-8 md:py-[52px]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-2 md:gap-8">
+          <div className="pb-6 md:pb-0">
             <div className="text-bg-light font-serif text-base tracking-[0.1em] uppercase">
               Marcos Gamero
             </div>
@@ -93,11 +93,16 @@ export function Footer() {
             ]}
           />
 
-          <div>
-            <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
-              Talca / Maule
-            </h5>
-            <ul className="list-none m-0 p-0 flex flex-col gap-[11px]">
+          <details className="footer-accordion group border-t border-bg-light/10 md:border-0">
+            <summary className="flex items-center justify-between cursor-pointer py-4 md:py-0">
+              <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft font-semibold relative pb-2.5 md:mb-4 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
+                Talca / Maule
+              </h5>
+              <span className="footer-accordion-icon text-bg-light/60 text-[18px] leading-none transition-transform duration-200 group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <ul className="list-none m-0 p-0 pb-4 md:pb-0 flex flex-col gap-[11px]">
               <li>
                 <a href="/#ubicacion" className="text-[#c3ccc6] text-[13px] no-underline transition-colors hover:text-bg-light">
                   Cómo llegar
@@ -119,7 +124,7 @@ export function Footer() {
                 </span>
               </li>
             </ul>
-          </div>
+          </details>
         </div>
       </div>
 
@@ -145,11 +150,16 @@ function FooterColumn({
   links: { label: string; href: string }[];
 }) {
   return (
-    <div>
-      <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft mb-4 font-semibold relative pb-2.5 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
-        {title}
-      </h5>
-      <ul className="list-none m-0 p-0 flex flex-col gap-[11px]">
+    <details className="footer-accordion group border-t border-bg-light/10 md:border-0">
+      <summary className="flex items-center justify-between cursor-pointer py-4 md:py-0">
+        <h5 className="font-sans text-[10.5px] tracking-[0.14em] uppercase text-botanical-soft font-semibold relative pb-2.5 md:mb-4 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-[22px] after:h-px after:bg-botanical-soft after:opacity-60">
+          {title}
+        </h5>
+        <span className="footer-accordion-icon text-bg-light/60 text-[18px] leading-none transition-transform duration-200 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+      <ul className="list-none m-0 p-0 pb-4 md:pb-0 flex flex-col gap-[11px]">
         {links.map((link) => (
           <li key={link.label}>
             <a
@@ -161,6 +171,6 @@ function FooterColumn({
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 }

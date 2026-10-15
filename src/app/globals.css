@@ -76,3 +76,26 @@ h1, h2, h3, h4 {
     transition: none !important;
   }
 }
+
+/* Footer: acordeón colapsable en mobile, siempre expandido desde md */
+.footer-accordion summary {
+  list-style: none;
+}
+.footer-accordion summary::-webkit-details-marker,
+.footer-accordion summary::marker {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-accordion {
+    display: block !important;
+  }
+  .footer-accordion > summary {
+    pointer-events: none;
+  }
+  .footer-accordion > summary .footer-accordion-icon {
+    display: none;
+  }
+  .footer-accordion > ul {
+    display: flex !important;
+  }
+}

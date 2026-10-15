@@ -2,6 +2,10 @@ export type RoomVariant = {
   name: string;
   bedType: string;
   price: string;
+  capacity?: string;
+  desc?: string;
+  longDesc?: string;
+  amenities?: string[];
 };
 
 export type Room = {
@@ -23,19 +27,29 @@ export type Room = {
 export const rooms: Room[] = [
   {
     slug: "single",
-    tag: "Single",
+    tag: "Habitación",
     door: "112",
-    name: "Habitación Single",
+    name: "Single",
     meta: ["16 m²", "1 cama", "2º piso"],
     desc: "Compacta y luminosa, pensada para el viajero que anda solo: TV por cable, baño privado y todo lo esencial, sin nada de más.",
     longDesc:
       "Pensada para estadías de negocios o viajes en solitario, la Habitación Single incluye TV de pantalla plana con canales por cable y baño privado. Disponible en cuatro variantes de cama según disponibilidad y presupuesto.",
     price: "desde $60.000",
-    image: "/hotel/40HMG.jpg",
-    alt: "Habitación Single con cama y cortinas junto a la ventana",
+    image: "/hotel/single-habitacion.jpg",
+    alt: "Habitación Single con cama, ventana y televisor de pantalla plana",
     gallery: [
-      { src: "/hotel/40HMG.jpg", alt: "Cama y cortinas junto a la ventana" },
-      { src: "/hotel/72HMG.jpg", alt: "Detalle de mesa y lámpara" },
+      {
+        src: "/hotel/single-habitacion.jpg",
+        alt: "Habitación Single con cama, ventana y televisor de pantalla plana",
+      },
+      {
+        src: "/hotel/single-escritorio.jpg",
+        alt: "Escritorio con espejo circular y velador junto a la cama",
+      },
+      {
+        src: "/hotel/single-bano.jpg",
+        alt: "Baño privado con mueble de madera y azulejo verde",
+      },
     ],
     amenities: [
       "TV de pantalla plana con cable",
@@ -69,7 +83,7 @@ export const rooms: Room[] = [
   },
   {
     slug: "familiares",
-    tag: "Familiares",
+    tag: "Habitaciones Familiares",
     door: "204",
     name: "Habitación Familiar",
     meta: ["34 m²", "1 Queen + 2 Twin", "2º piso"],
@@ -90,6 +104,57 @@ export const rooms: Room[] = [
       "Baño privado",
       "Cuna disponible a pedido",
       "Limpieza diaria",
+    ],
+    variants: [
+      {
+        name: "Familiar - 6 personas",
+        bedType: "1 cama King, 1 cama Queen y 2 camas de plaza y media",
+        price: "$145.000",
+        capacity: "6 personas",
+        desc: "2 habitaciones para familias grandes. 2 baños y 2 aires acondicionados. Terraza interior",
+        longDesc:
+          "Se incluyen 2 habitaciones conectadas, con 2 baños y 2 aires acondicionados. 1 cama King, 1 cama Queen más 2 camas de plaza y media.",
+        amenities: [
+          "2 habitaciones conectadas",
+          "2 baños",
+          "2 aires acondicionados",
+          "1 cama King",
+          "1 cama Queen",
+          "2 camas de plaza y media",
+        ],
+      },
+      {
+        name: "Familiar doble Superior",
+        bedType: "2 camas de plaza y media",
+        price: "$85.000",
+        desc: "Habitación Familiar Superior con dos camas de plaza y media",
+        longDesc:
+          "Esta habitación incluye TV de pantalla plana con canales por cable y baño privado. La unidad ofrece 2 camas de tamaño plaza y media.",
+      },
+      {
+        name: "Familiar Cuadruple",
+        bedType: "4 camas de plaza y media",
+        price: "$98.000",
+        desc: "Habitación Familiar con cuatro camas de plaza y media",
+        longDesc:
+          "Esta habitación incluye TV de pantalla plana con canales por cable y baño privado. La unidad ofrece camas de plaza y media.",
+      },
+      {
+        name: "Familiar King con terraza",
+        bedType: "1 cama de plaza y media y 1 cama King",
+        price: "$94.000",
+        desc: "Habitación Familiar con una cama de plaza y media, una cama King y acceso a terraza.",
+        longDesc:
+          "Esta habitación incluye TV de pantalla plana con canales por cable y baño privado. La unidad ofrece 2 camas, 1 de plaza y media y la otra tamaño King.",
+      },
+      {
+        name: "Familiar Triple Superior",
+        bedType: "3 camas de plaza y media",
+        price: "$94.000",
+        desc: "Habitación Familiar Superior con 3 camas de plaza y media.",
+        longDesc:
+          "Esta habitación incluye TV de pantalla plana con canales por cable y baño privado. La unidad ofrece 3 camas de plaza y media.",
+      },
     ],
   },
   {

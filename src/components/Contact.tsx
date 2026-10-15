@@ -29,7 +29,7 @@ export function Contact() {
           <p className="font-serif-italic text-[26px] text-botanical">
             Encuentro
           </p>
-          <h2 className="text-[clamp(2rem,3.4vw,2.8rem)] font-normal mt-3">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-3">
             Escríbenos o llámanos
           </h2>
         </div>

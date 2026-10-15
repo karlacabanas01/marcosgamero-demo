@@ -8,8 +8,8 @@ export function Hero() {
       className="relative h-svh max-h-[760px] min-h-[600px] overflow-hidden"
     >
       <Image
-        src="/hotel/hero-hotel.png"
-        alt="Salón invernadero del Hotel Marcos Gamero, con vegetación y estructura de hierro forjado"
+        src="/hotel/hero-entrada.jpg"
+        alt="Entrada del Hotel Marcos Gamero, puertas de hierro y vidrio hacia el patio interior"
         fill
         priority
         sizes="100vw"

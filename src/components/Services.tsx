@@ -73,7 +73,7 @@ export function Services() {
           <p className="font-serif-italic text-[26px] text-botanical">
             Servicios
           </p>
-          <h2 className="text-[clamp(2rem,3.4vw,2.8rem)] font-normal mt-3">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-3">
             Un hotel para descansar, trabajar y celebrar
           </h2>
           <p className="max-w-[44ch] text-text-muted text-[15px] mt-3">

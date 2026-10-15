@@ -40,7 +40,7 @@ export function Gallery() {
           <p className="font-serif-italic text-[26px] text-botanical">
             Momentos
           </p>
-          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-normal uppercase tracking-[0.04em] mt-2">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-2">
             El hotel en imágenes
           </h2>
         </div>

@@ -1,28 +1,29 @@
 import Image from "next/image";
+import { MapPin, Landmark, ScrollText, Bus, Mountain } from "lucide-react";
 
 const points = [
   {
-    icon: "\u{1F4CD}",
+    icon: MapPin,
     title: "Dirección",
     desc: "1 Sur 1150, Talca, Región del Maule",
   },
   {
-    icon: "\u{1F3DB}️",
+    icon: Landmark,
     title: "Plaza de Armas de Talca",
     desc: "2 minutos caminando",
   },
   {
-    icon: "\u{1F3DB}",
+    icon: ScrollText,
     title: "Museo O'Higginiano",
     desc: "1 cuadra · resguarda el Acta de Independencia de Chile",
   },
   {
-    icon: "\u{1F68C}",
+    icon: Bus,
     title: "Terminal de buses",
     desc: "20 minutos caminando",
   },
   {
-    icon: "\u{1F3D5}️",
+    icon: Mountain,
     title: "Radal Siete Tazas y Altos de Lircay",
     desc: "A 2 horas · cascadas, senderos y bosque nativo",
   },
@@ -36,10 +37,10 @@ export function Location() {
           <p className="font-serif-italic text-[26px] text-botanical">
             Entorno
           </p>
-          <h2 className="text-[clamp(2rem,3.4vw,2.8rem)] font-normal mt-3">
+          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-3">
             En pleno centro de Talca
           </h2>
-          <p className="text-text-muted text-[15px] mt-3.5 max-w-[46ch]">
+          <p className="text-text-muted text-[15px] leading-[1.7] mt-3.5 max-w-[46ch]">
             A pasos de la Alameda y su Plaza de Armas, y a un viaje corto de
             la costa de Constitución —a la que se puede llegar en el único
             tren de trocha angosta de Chile.
@@ -47,8 +48,8 @@ export function Location() {
           <ul className="list-none mt-[26px] p-0 flex flex-col gap-5">
             {points.map((p) => (
               <li key={p.title} className="flex gap-3.5">
-                <div className="w-[38px] h-[38px] rounded-full bg-dark text-botanical-soft flex items-center justify-center shrink-0 text-base">
-                  {p.icon}
+                <div className="w-[38px] h-[38px] rounded-full bg-dark text-bg-light flex items-center justify-center shrink-0">
+                  <p.icon className="w-[18px] h-[18px]" strokeWidth={1.75} />
                 </div>
                 <div>
                   <h4 className="font-sans text-[13.5px] font-semibold tracking-[0.03em]">

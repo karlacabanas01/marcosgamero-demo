@@ -6,6 +6,7 @@ import { Legacy } from "@/components/Legacy";
 import { Rooms } from "@/components/Rooms";
 import { Services } from "@/components/Services";
 import { Gallery } from "@/components/Gallery";
+import { Amenities } from "@/components/Amenities";
 import { Location } from "@/components/Location";
 import { Testimonial } from "@/components/Testimonial";
 import { Contact } from "@/components/Contact";
@@ -24,6 +25,7 @@ export default function Home() {
         <Rooms />
         <Services />
         <Gallery />
+        <Amenities />
         <Location />
         <Testimonial />
         <Contact />

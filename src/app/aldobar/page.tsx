@@ -92,7 +92,7 @@ export default function AldoBarPage() {
             Volver al inicio
           </Link>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
             <p className="font-serif-italic text-[26px] text-bg-light">
               Encuentro
             </p>
