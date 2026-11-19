@@ -51,16 +51,16 @@ const blocks = [
   {
     id: "cowork",
     eyebrow: "Trabajo",
-    title: "Co-work / Eventos",
-    desc: "Abrimos las puertas a Talca: un salón versátil con vigas a la vista y luz natural, acondicionado para jornadas de trabajo, reuniones directivas y celebraciones privadas, con montaje a medida para cada grupo.",
+    title: "Co Work",
+    desc: "Abrimos las puertas de la casona a la comunidad de Talca: un espacio tranquilo, cómodo e inspirador en Aldo'Bar para trabajar, concentrarte o tener pequeñas reuniones. Wifi de alta velocidad, estacionamiento y TV para presentaciones. Si prefieres el aire libre, también puedes trabajar en el patio.",
     comingSoon: false,
     facts: [
-      { value: "Hasta 40", label: "Personas" },
-      { value: "Wifi + A/V", label: "Equipamiento" },
-      { value: "A medida", label: "Montaje" },
+      { value: "$5.000", label: "Por hora" },
+      { value: "$20.000", label: "Media jornada" },
+      { value: "$35.000", label: "Jornada completa" },
     ],
-    image: "/hotel/184HMG.jpg",
-    alt: "Salón del hotel con vigas de madera, mesas y sillones para trabajo o eventos",
+    image: "/hotel/aldobar-barra.png",
+    alt: "Aldo'Bar, donde funciona el Co Work del hotel",
     reverse: true,
   },
 ];
@@ -106,7 +106,7 @@ export function Services() {
                     {block.eyebrow}
                   </p>
                   {block.comingSoon && (
-                    <span className="bg-dark text-bg-light font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
+                    <span className="bg-blush-deep text-dark font-sans text-[10.5px] font-semibold tracking-[0.12em] uppercase px-3 py-1.5">
                       Próximamente
                     </span>
                   )}
@@ -126,7 +126,7 @@ export function Services() {
                   ))}
                 </div>
                 {block.href && (
-                  <Button href={block.href} variant="ghost" className="self-start mt-2">
+                  <Button href={block.href} variant="blush" className="self-start mt-2">
                     Conoce más
                   </Button>
                 )}

@@ -19,7 +19,7 @@ export function RoomCarousel({ photos, tag }: { photos: Photo[]; tag: string }) 
         priority
         className="object-cover"
       />
-      <span className="absolute top-4 left-4 bg-dark/80 text-botanical-soft font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
+      <span className="absolute top-4 left-4 bg-dark/80 text-blush-deep font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
         {tag}
       </span>
 

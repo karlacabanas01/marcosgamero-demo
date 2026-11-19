@@ -11,6 +11,7 @@ import {
   Baby,
   Armchair,
   Gift,
+  Users,
 } from "lucide-react";
 
 const amenityIcons: { match: RegExp; icon: typeof Check }[] = [
@@ -30,6 +31,8 @@ const amenityIcons: { match: RegExp; icon: typeof Check }[] = [
   { match: /mobiliario/i, icon: Armchair },
   { match: /sala independiente/i, icon: Sofa },
   { match: /detalle de bienvenida/i, icon: Gift },
+  { match: /\bcamas?\b/i, icon: BedDouble },
+  { match: /personas/i, icon: Users },
 ];
 
 export function iconForAmenity(label: string) {

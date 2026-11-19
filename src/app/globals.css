@@ -12,7 +12,7 @@
   --botanical-deep: #0f1b17;
   --botanical-soft: #8fab9c;
   --blush: #e8cdc8;
-  --blush-deep: #d9afa7;
+  --blush-deep: #d89a8a;
   --border: #e4e2dd;
 }
 
@@ -33,6 +33,8 @@
   --font-serif: var(--font-serif);
   --font-serif-italic: var(--font-serif-italic);
   --font-sans: var(--font-sans);
+  --font-jost: var(--font-jost);
+  --font-display: var(--font-display);
 }
 
 body {

@@ -55,7 +55,7 @@ export function Legacy() {
           </div>
 
           <div className="pt-1.5">
-            <blockquote className="font-serif text-[22px] font-normal leading-[1.5] text-dark pl-5 border-l-2 border-botanical">
+            <blockquote className="font-serif text-[22px] font-normal leading-[1.5] text-dark pl-5 border-l-2 border-blush-deep">
               &ldquo;La base fundamental de nuestro hotel es el cariño, el
               respeto y sobre todo el buen recuerdo junto a nuestros seres
               queridos.&rdquo;

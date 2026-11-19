@@ -37,14 +37,14 @@ function AmenitiesBlock({ amenities }: { amenities: string[] }) {
 function PhotosBlock({ room }: { room: Room }) {
   if (room.slug === "single") {
     return (
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-4">
         <RoomCarousel photos={room.gallery} tag={room.tag} />
       </div>
     );
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-4 grid grid-cols-1 md:grid-cols-2 gap-3">
       <div className="relative aspect-[4/3] overflow-hidden md:row-span-2">
         <Image
           src={room.gallery[0]?.src ?? room.image}
@@ -54,7 +54,7 @@ function PhotosBlock({ room }: { room: Room }) {
           priority
           className="object-cover"
         />
-        <span className="absolute top-4 left-4 bg-dark/80 text-botanical-soft font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
+        <span className="absolute top-4 left-4 bg-dark/80 text-blush-deep font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
           {room.tag}
         </span>
       </div>
@@ -76,21 +76,12 @@ function PhotosBlock({ room }: { room: Room }) {
 export function RoomVariantGallery({ room }: { room: Room }) {
   const { variants, index } = useRoomVariant();
   const variant = variants[index];
-  const variantAmenities = variant?.amenities;
-
-  if (variantAmenities) {
-    return (
-      <>
-        <AmenitiesBlock amenities={variantAmenities} />
-        <PhotosBlock room={room} />
-      </>
-    );
-  }
+  const amenities = variant?.amenities ?? room.amenities;
 
   return (
     <>
+      <AmenitiesBlock amenities={amenities} />
       <PhotosBlock room={room} />
-      <AmenitiesBlock amenities={room.amenities} />
     </>
   );
 }

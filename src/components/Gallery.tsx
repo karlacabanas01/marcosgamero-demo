@@ -34,61 +34,45 @@ export function Gallery() {
   }
 
   return (
-    <section id="galeria" className="bg-bg-light py-[clamp(96px,12vw,160px)]">
+    <section id="galeria" className="bg-bg-light py-[clamp(48px,6vw,80px)]">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="text-center mb-14">
-          <p className="font-serif-italic text-[26px] text-botanical">
-            Momentos
-          </p>
-          <h2 className="font-sans text-[clamp(2.6rem,4vw,3rem)] font-normal uppercase tracking-[0.08em] mt-2">
-            El hotel en imágenes
-          </h2>
-        </div>
+        <div className="relative grid grid-cols-2 md:grid-cols-[2.13fr_1fr_1fr] md:grid-rows-2 gap-3 md:gap-6">
+          {preview.map((photo, index) => {
+            const isMain = index === 0;
+            return (
+              <button
+                key={photo.image}
+                type="button"
+                onClick={() => openLightbox(index)}
+                aria-label={`Ver foto: ${photo.label}`}
+                className={`relative overflow-hidden rounded-[3px] ${
+                  isMain
+                    ? "col-span-2 md:col-span-1 md:row-span-2 aspect-[5/4] md:aspect-auto"
+                    : "aspect-[365/289]"
+                }`}
+              >
+                <Image
+                  src={photo.image}
+                  alt={photo.label}
+                  fill
+                  sizes={
+                    isMain
+                      ? "(min-width: 768px) 50vw, 100vw"
+                      : "(min-width: 768px) 25vw, 50vw"
+                  }
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </button>
+            );
+          })}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() => openLightbox(0)}
-            className="relative aspect-[4/3] md:aspect-auto overflow-hidden"
+            className="absolute bottom-3 right-3 md:bottom-6 md:right-[calc((100%-48px)*0.136)] h-12 px-6 rounded-[4px] bg-white font-jost text-[16px] text-[#111] transition-colors duration-300 hover:bg-dark hover:text-bg-light"
           >
-            <Image
-              src={preview[0].image}
-              alt={preview[0].label}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 hover:scale-105"
-            />
+            Ver todas las fotos ({allPhotos.length})
           </button>
-
-          <div className="grid grid-cols-2 gap-3">
-            {preview.slice(1).map((photo, i) => {
-              const index = i + 1;
-              const isLast = index === preview.length - 1;
-              return (
-                <button
-                  key={photo.image}
-                  type="button"
-                  onClick={() => openLightbox(index)}
-                  className="relative aspect-[4/3] overflow-hidden"
-                >
-                  <Image
-                    src={photo.image}
-                    alt={photo.label}
-                    fill
-                    sizes="25vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                  {isLast && (
-                    <span className="absolute inset-0 bg-dark/45 flex items-center justify-center">
-                      <span className="bg-bg-light text-dark font-sans text-[13px] font-medium px-4 py-2.5 rounded-[2px]">
-                        Ver todas las fotos ({allPhotos.length})
-                      </span>
-                    </span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
         </div>
       </div>
 

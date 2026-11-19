@@ -6,7 +6,7 @@ const links = [
   { href: "/aldobar", label: "Aldo'Bar" },
   { href: "/#cowork", label: "CoWork" },
   { href: "/#wellness", label: "Wellness" },
-  { href: "/#familiar", label: "Familiar" },
+  { href: "/familiar", label: "Familiar" },
 ];
 
 const socials = [
@@ -24,42 +24,27 @@ const socials = [
 
 export function Navbar({ compact = false }: { compact?: boolean }) {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-dark/25">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex items-center justify-between gap-6">
+    <header className="fixed top-0 inset-x-0 z-50 bg-dark/25 pb-4">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 pt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+        <div />
         <a
           href="/#top"
           className="flex items-center gap-2.5 no-underline text-bg-light"
         >
-          <span className="w-9 h-9 rounded-full bg-bg-light flex items-center justify-center overflow-hidden shrink-0">
-            <Image
-              src="/brand/hotel-icon.png"
-              alt=""
-              width={280}
-              height={260}
-              className="w-[26px] h-auto"
-            />
-          </span>
+          <Image
+            src="/brand/hotel-icon.png"
+            alt=""
+            width={280}
+            height={260}
+            className="w-9 h-auto shrink-0"
+          />
           <span className="font-serif text-[19px] tracking-[0.15em] uppercase">
             Marcos Gamero
           </span>
         </a>
 
-        {!compact && (
-          <nav className="hidden md:flex gap-8">
-            {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-sans text-[13px] font-normal tracking-[0.04em] text-bg-light/90 transition-colors duration-300 hover:text-bg-light"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        )}
-
-        <div className="flex items-center gap-5">
-          <Button href="/#reservar" variant="nav">
+        <div className="flex items-center justify-end gap-5">
+          <Button href="/#reservar" variant="nav-blush">
             Reservar
           </Button>
           {!compact && (
@@ -104,6 +89,20 @@ export function Navbar({ compact = false }: { compact?: boolean }) {
           )}
         </div>
       </div>
+
+      {!compact && (
+        <nav className="hidden md:flex justify-center gap-10 pt-3">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="font-sans text-[13px] font-normal tracking-[0.04em] text-bg-light/90 transition-colors duration-300 hover:text-bg-light"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }

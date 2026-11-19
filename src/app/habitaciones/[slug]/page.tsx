@@ -94,42 +94,6 @@ export default async function RoomDetailPage({
             <RoomVariantGallery room={room} />
           ) : (
             <>
-              {room.slug === "single" ? (
-                <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-                  <RoomCarousel photos={room.gallery} tag={room.tag} />
-                </div>
-              ) : (
-                <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="relative aspect-[4/3] overflow-hidden md:row-span-2">
-                    <Image
-                      src={room.gallery[0]?.src ?? room.image}
-                      alt={room.gallery[0]?.alt ?? room.alt}
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      priority
-                      className="object-cover"
-                    />
-                    <span className="absolute top-4 left-4 bg-dark/80 text-botanical-soft font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
-                      {room.tag}
-                    </span>
-                  </div>
-                  {room.gallery.slice(1).map((photo) => (
-                    <div
-                      key={photo.src}
-                      className="relative aspect-[4/3] overflow-hidden"
-                    >
-                      <Image
-                        src={photo.src}
-                        alt={photo.alt}
-                        fill
-                        sizes="(min-width: 768px) 25vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-
               <div className="bg-bg-light text-dark py-[clamp(56px,8vw,96px)] border-y border-border">
                 <div className="max-w-[1400px] mx-auto px-6 md:px-10 text-center">
                   <p className="font-serif-italic text-[clamp(1.5rem,2vw,1.75rem)] text-botanical">
@@ -156,17 +120,53 @@ export default async function RoomDetailPage({
                   </ul>
                 </div>
               </div>
+
+              {room.slug === "single" ? (
+                <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-4">
+                  <RoomCarousel photos={room.gallery} tag={room.tag} />
+                </div>
+              ) : (
+                <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="relative aspect-[4/3] overflow-hidden md:row-span-2">
+                    <Image
+                      src={room.gallery[0]?.src ?? room.image}
+                      alt={room.gallery[0]?.alt ?? room.alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      priority
+                      className="object-cover"
+                    />
+                    <span className="absolute top-4 left-4 bg-dark/80 text-blush-deep font-sans text-[10.5px] tracking-[0.12em] uppercase px-3 py-1.5">
+                      {room.tag}
+                    </span>
+                  </div>
+                  {room.gallery.slice(1).map((photo) => (
+                    <div
+                      key={photo.src}
+                      className="relative aspect-[4/3] overflow-hidden"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(min-width: 768px) 25vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </>
           )}
         </RoomVariantProvider>
 
         {!room.variants && (
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-[clamp(64px,9vw,120px)]">
-            <div className="bg-bg-light p-7 md:p-9">
-              <p className="font-sans text-[11px] tracking-[0.06em] uppercase text-text-muted text-center">
+            <div className="bg-bg-warm border border-border p-6 max-w-[360px] mx-auto text-center">
+              <p className="font-sans text-[11px] tracking-[0.06em] uppercase text-text-muted">
                 Tarifa
               </p>
-              <div className="flex items-baseline justify-center gap-2 mt-2">
+              <div className="flex items-baseline justify-center gap-1.5 mt-2">
                 <b className="font-serif text-[32px] font-medium text-dark">
                   {room.price}
                 </b>
@@ -175,8 +175,8 @@ export default async function RoomDetailPage({
 
               <Button
                 href="/#reservar"
-                variant="cta"
-                className="w-full justify-center mt-7 max-w-[360px] mx-auto"
+                variant="blush"
+                className="w-full mt-6"
               >
                 Consultar disponibilidad
               </Button>

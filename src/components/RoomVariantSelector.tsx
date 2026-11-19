@@ -43,23 +43,26 @@ export function RoomVariantSelector({ roomName }: { roomName: string }) {
       </div>
 
       <div className="mt-8">
-        <div className="flex items-baseline justify-center gap-1.5">
-          <b className="font-serif text-[32px] font-medium text-dark">
-            {variant.price}
-          </b>
-          <span className="text-sm text-text-muted">/ noche</span>
-        </div>
-        <p className="font-sans text-[13px] text-botanical mt-1">
-          {variant.bedType}
-          {variant.capacity ? ` · ${variant.capacity}` : ""}
-        </p>
         {!variant.amenities && variant.longDesc && (
-          <p className="text-text-muted text-[15.5px] leading-[1.75] mt-5 max-w-[62ch] mx-auto">
+          <p className="text-text-muted text-[15.5px] leading-[1.75] max-w-[62ch] mx-auto mb-7">
             {variant.longDesc}
           </p>
         )}
-        <div className="flex justify-center mt-7">
-          <Button href="/#reservar" variant="cta" className="w-full max-w-[360px]">
+        <div className="bg-bg-warm border border-border p-6 max-w-[360px] mx-auto text-center">
+          <p className="font-sans text-[11px] tracking-[0.06em] uppercase text-text-muted">
+            Tarifa
+          </p>
+          <div className="flex items-baseline justify-center gap-1.5 mt-2">
+            <b className="font-serif text-[32px] font-medium text-dark">
+              {variant.price}
+            </b>
+            <span className="text-sm text-text-muted">/ noche</span>
+          </div>
+          <p className="font-sans text-[13px] text-botanical mt-1">
+            {variant.bedType}
+            {variant.capacity ? ` · ${variant.capacity}` : ""}
+          </p>
+          <Button href="/#reservar" variant="blush" className="w-full mt-6">
             Consultar disponibilidad
           </Button>
         </div>
